@@ -4,5 +4,5 @@ Projeto de um App de notas usando Vite + React + TypeScript. Para gerenciar os e
 React. 
 
 <p align="center">
-  <img width="400" height="450" src="notesApp.gif"/>
+  <img width="600" height="350" src="notesApp.gif"/>
 </p>
