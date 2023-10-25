@@ -1,15 +1,20 @@
 import React from 'react'
+import { Note } from './models';
 
 interface Props {
-    title: string
-    content: string
+    note: Note
+    dispatch: React.Dispatch<{
+      type: "add" | "del",
+      payload:Note;
+  }>
 }
 
-const SingleNote:React.FC<Props> = ({title,content}) => {
+const SingleNote:React.FC<Props> = ({note,dispatch}) => {
   return (
     <div className='note'>
-        <h1>{title}</h1>
-        <p>{content}</p>
+        <h1>{note.title}</h1>
+        <p>{note.content}</p>
+        <small onClick={()=>dispatch({type: "del",payload: note})}>X</small>
     </div>
   )
 }

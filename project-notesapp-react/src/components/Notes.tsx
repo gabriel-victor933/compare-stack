@@ -1,18 +1,22 @@
 import React from 'react'
 import SingleNote from './SingleNote'
+import { Note } from './models';
 
-const Notes:React.FC = () => {
+interface Props {
+  notes: Note[],
+  dispatch: React.Dispatch<{
+    type: "add" | "del",
+    payload:Note;
+}>
+}
 
-    const title = "Titulo 1";
-    const content = `content 1 content 1 contenete 1
-    content 1 content 1 contenete 1
-    content 1 content 1 contenete 1
-    content 1 content 1 contenete 1
-    `;
+const Notes:React.FC<Props> = ({notes,dispatch}) => {
+
     
   return (
     <div className='notes'>
-        <SingleNote title={title} content={content}/>
+        {notes.map((note) => <SingleNote key={note.id} note={note} dispatch={dispatch}/>)}
+        
     </div>
   )
 }

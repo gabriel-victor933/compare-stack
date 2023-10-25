@@ -3,8 +3,8 @@ import { Note } from './models';
 
 interface Props {
     dispatch: React.Dispatch<{
-        type: "add";
-        payload: number | undefined | Note;
+        type: "add" | "del",
+        payload:Note;
     }>
 }
 
@@ -16,7 +16,6 @@ const Input:React.FC<Props> = ({dispatch}) => {
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        /*add uma nota*/
         if(title && content){
             dispatch({type: "add",payload: {id: Date.now(),title,content}})
         }
