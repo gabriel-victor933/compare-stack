@@ -37,6 +37,7 @@ input {
 
 textarea {
     height: 120px;
+    resize: none;
     
 }
 
@@ -86,9 +87,32 @@ h1,p {
     margin: 0px;
 }
 
-small {
+.icon.close {
     position: absolute;
-    top: 7px;
-    right: 7px;
+    top: 3px;
+    right: 3px;
     cursor: pointer;
+}
+
+.icon.edit {
+    position: absolute;
+    top: 3px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.note-input, .note-button, .note-textarea {
+    margin: 5px;
+}
+
+.note-input {
+    height: 30px;
+}
+
+.note-button {
+    height: 30px;
+}
+
+.note-textarea {
+    height: 70px;
 }
