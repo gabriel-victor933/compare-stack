@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import { Note } from './models';
+import { Note } from '../models';
 import { AiOutlineClose, AiOutlineEdit } from "react-icons/ai";
+import { Action } from '../models'
+
 
 interface Props {
     note: Note
-    dispatch: React.Dispatch<{
-      type: "add" | "del" | "edit",
-      payload:Note;
-  }>
+    dispatch: React.Dispatch<Action>
 }
 
 const SingleNote:React.FC<Props> = ({note,dispatch}) => {

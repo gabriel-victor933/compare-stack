@@ -2,12 +2,10 @@ import { useReducer } from 'react'
 import './App.css'
 import Input from './components/Input'
 import Notes from './components/Notes'
-import { Note } from './components/models'
+import { Note } from './models'
+import { Action } from './models'
 
-type Action = {
-  type: "add" | "del" | "edit",
-  payload: Note
-}
+
 
 function reducer(state: Note[],action: Action){
   switch(action.type){
@@ -18,12 +16,9 @@ function reducer(state: Note[],action: Action){
   }
 }
 
-
-
 const App:React.FC = ()=> {
 
   const [state,dispatch] = useReducer(reducer,[])
-  console.log(state)
   return (
     <>
       <Input dispatch={dispatch}/>

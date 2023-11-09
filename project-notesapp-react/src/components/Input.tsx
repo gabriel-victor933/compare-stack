@@ -1,11 +1,9 @@
 import React, {  useState } from 'react'
-import { Note } from './models';
+import { Action } from '../models'
+
 
 interface Props {
-    dispatch: React.Dispatch<{
-        type: "add" | "del",
-        payload:Note;
-    }>
+    dispatch: React.Dispatch<Action>
 }
 
 const Input:React.FC<Props> = ({dispatch}) => {

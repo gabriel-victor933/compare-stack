@@ -1,13 +1,12 @@
 import React from 'react'
 import SingleNote from './SingleNote'
-import { Note } from './models';
+import { Note } from '../models';
+import { Action } from '../models'
+
 
 interface Props {
   notes: Note[],
-  dispatch: React.Dispatch<{
-    type: "add" | "del",
-    payload:Note;
-}>
+  dispatch: React.Dispatch<Action>
 }
 
 const Notes:React.FC<Props> = ({notes,dispatch}) => {
